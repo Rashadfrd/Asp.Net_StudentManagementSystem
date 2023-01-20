@@ -1,0 +1,204 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Asp.NetStudentManagementSystem
+build_property.RootNamespace = Asp.NetStudentManagementSystem
+build_property.ProjectDir = C:\Users\Rashad\Desktop\Asp.NetStudentManagementSystem\Asp.NetStudentManagementSystem\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Rashad\Desktop\Asp.NetStudentManagementSystem\Asp.NetStudentManagementSystem
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Document/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9jdW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Exam/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXhhbVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Exam/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXhhbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Exam/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXhhbVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Group/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR3JvdXBcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Group/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR3JvdXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Group/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR3JvdXBcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Notification/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTm90aWZpY2F0aW9uXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Notification/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTm90aWZpY2F0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Notification/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTm90aWZpY2F0aW9uXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Schedule/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2NoZWR1bGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Schedule/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2NoZWR1bGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Schedule/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2NoZWR1bGVcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Student/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3R1ZGVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Student/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3R1ZGVudFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Subject/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViamVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Subject/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViamVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Subject/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViamVjdFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Teacher/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVhY2hlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Teacher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/Views/Teacher/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVhY2hlclxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Areas/Admin/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Home/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Home/Files.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaWxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Home/PrivateChat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YXRlQ2hhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Redoc/DocumentStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVkb2NcRG9jdW1lbnRTdGF0dXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Redoc/FormAppeal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVkb2NcRm9ybUFwcGVhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Redoc/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVkb2NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Shared/_JournalPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Kb3VybmFsUGFydGlhbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Shared/_LayoutRedoc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRSZWRvYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Shared/_ModalPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Nb2RhbFBhcnRpYWxWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/Shared/_UpdateJournalPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9VcGRhdGVKb3VybmFsUGFydGlhbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/StudentJournal/Exam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEpvdXJuYWxcRXhhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/StudentJournal/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEpvdXJuYWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/StudentJournal/Schedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEpvdXJuYWxcU2NoZWR1bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/TeacherJournal/Journal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlckpvdXJuYWxcSm91cm5hbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/TeacherJournal/UpdateJournal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlckpvdXJuYWxcVXBkYXRlSm91cm5hbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rashad/Desktop/Asp.NetStudentManagementSystem/Asp.NetStudentManagementSystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

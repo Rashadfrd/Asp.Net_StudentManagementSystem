@@ -1,0 +1,28 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Fayllar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<FileModel>
+
+
+    <table class="subjects-table table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>FileName</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.FileName</td>
+                    <td><a style="text-decoration:none;border:1px solid black; padding:3px 7px;background-color:#f2f2f2;color:black" asp-controller="Home" asp-action="DownloadFile" asp-route-fileName="@item.FileName">Yüklə</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+

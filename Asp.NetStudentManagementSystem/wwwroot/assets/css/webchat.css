@@ -1,0 +1,13 @@
+﻿#single-messages a li {
+    transition: .2s
+}
+
+    #single-messages a li:hover {
+        background-color: #144365 !important;
+        color: white;
+    }
+
+#sendButton:hover {
+    background-color: #144365 !important;
+    color: white
+}

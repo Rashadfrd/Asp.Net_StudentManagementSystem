@@ -1,0 +1,106 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+@using Asp.NetStudentManagementSystem.ViewModels
+
+@model HomeVM
+@{
+    int count = 0;
+    int countUpdate = 0;
+}
+@*    <form method="post" asp-controller="Home" asp-action="Form" >
+    @foreach (var item in Model.Attendance)
+    {
+        <span>@item.Student.Name</span>
+        <input type="hidden" value="@item.StudentId" name="[@count].StudentId" />
+        <input type="hidden" value="@Model.Subject.Id" name="[@count].SubjectId" />
+        <input type="hidden" value="@DateTime.Parse("2022-01-05")" name="[@count].Date" />
+        <input type="checkbox" value="true" name="[@count].IsPresent" /> <br/>
+        <input type="hidden" value="false" name="[@count].IsPresent" />
+        count++;
+    }
+    <button type="submit">submit</button>
+</form>
+
+<form method="post" asp-controller="Home" asp-action="Update" >
+    @foreach (var item in Model.Attendance)
+    {
+        <span>@item.Student.Name</span>
+        <input type="hidden" value="@item.Id" name="[@countUpdate].Id" />
+        <input type="hidden" value="@item.StudentId" name="[@countUpdate].StudentId" />
+        <input type="hidden" value="@Model.Subject.Id" name="[@countUpdate].SubjectId" />
+        <input type="hidden" value="@DateTime.Parse("2022-01-05")" name="[@countUpdate].Date" />
+        <input type="checkbox" value="true" name="[@countUpdate].IsPresent" /> <br/>
+        <input type="hidden" value="false" name="[@countUpdate].IsPresent" />
+        countUpdate++;
+    }
+    <button type="submit">submit</button>
+</form>*@
+
+
+
+<form method="post" asp-controller="TeacherJournal" asp-action="Form">
+@*    <table class="students-table table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Tələbə (Ad Soyad)</th>
+            <th>Qiymət</th>
+            <th>İştirak</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model.CurrentGroup.Students)
+            {
+                <tr>
+                    <td>@item.Name @item.Surname</td>
+                    <td><input type="number" min="0" max="10" name="[@countUpdate].Grade" /></td>
+                    <td>        
+                        <input type="checkbox" value="true" name="[@countUpdate].IsPresent" /> <br/>
+                        <input type="hidden" value="false" name="[@countUpdate].IsPresent" />
+                        <input type="hidden" value="@item.Id" name="[@countUpdate].StudentId" />
+                        <input type="hidden" value="@Model.Subject.Id" name="[@countUpdate].SubjectId" />
+                        <input type="hidden" value="@Model.Date" name="[@countUpdate].Date" />
+                    </td>
+                </tr>
+                countUpdate++;
+            }
+    </tbody>
+    </table>*@
+
+    <table class="students-table table table-striped table-bordered">
+         <thead>
+             <tr>
+                <th>Tələbə (Ad Soyad)</th>
+                <th>Qiymət/İştirak</th>
+        </tr>
+         </thead>
+         <tbody>
+            @foreach (var item in Model.CurrentGroup.Students)
+            {
+                <tr>
+                    <td>@item.Name @item.Surname</td>
+                    <td>
+                        <select name="[@countUpdate].GradeOrAbsent">
+                            <option value="-2">i/e</option>
+                            <option value="-1">q/b</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        <input type="hidden" value="@item.Id" name="[@countUpdate].StudentId" />
+                        <input type="hidden" value="@Model.Subject.Id" name="[@countUpdate].SubjectId" />
+                        <input type="hidden" value="@Model.Date" name="[@countUpdate].Date" />
+                    </td>
+                </tr>
+                countUpdate++;
+            }
+          </tbody>
+    </table>
+        <button type="submit">submit</button>
+</form>

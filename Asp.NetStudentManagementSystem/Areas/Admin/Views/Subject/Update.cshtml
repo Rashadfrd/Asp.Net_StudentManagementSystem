@@ -1,0 +1,27 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Düzəliş et";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model Subject
+
+<table class="subjects-table table table-striped table-bordered">
+</table>
+<div class="container d-flex justify-content-center">
+    <form class="col-6" method="post" asp-controller="Subject" asp-action="Update">
+
+        <label asp-for="Name">Dərsin adı</label>
+        <input class="form-control" asp-for="Name" /> <br />
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+
+        <label asp-for="Hours">Dərs saatı</label>
+        <input class="form-control" type="number" asp-for="Hours" /> <br />
+        <span class="text-danger" asp-validation-for="Hours"></span>
+
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <button type="submit" class="btn btn-primary" style="background-color:#144365;border:none">Təsdiqlə</button>
+    </form>
+</div>
+

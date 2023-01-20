@@ -1,0 +1,65 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Cədvəl yarat";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model Schedule
+<table class="subjects-table table table-striped table-bordered">
+</table>
+<div class="container d-flex justify-content-center p-3">
+    <form class="col-6" method="post" asp-controller="Schedule" asp-action="Create">
+        <label asp-for="Room">Otaq</label>
+        <input class="form-control" type="number" asp-for="Room" />
+        <span class="text-danger" asp-validation-for="Room"></span>
+
+        <div class="form-input-control mt-2">
+            <select asp-for="LessonHourId" class="gender-selection w-100">
+                <option value="">-- Saatı seçin --</option>
+                @foreach (var item in (ViewBag.Time as List<LessonHour>))
+                {
+                    <option value="@item.Id">@item.Begin - @item.End</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-input-control mt-2">
+            <select asp-for="LessonDayId" class="gender-selection w-100">
+                <option value="">-- Günü seçin --</option>
+                @foreach (var item in (ViewBag.Days as List<LessonDay>))
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-input-control mt-2">
+            <select asp-for="SubjectId" class="gender-selection w-100">
+                <option value="">-- Fənni seçin --</option>
+                @foreach (var item in (ViewBag.Subjects as List<Subject>))
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>
+        <div class="form-input-control mt-2 mb-3">
+            <select asp-for="GroupId" class="gender-selection w-100">
+                <option value="">-- Qrupu seçin --</option>
+                @foreach (var item in (ViewBag.Groups as List<Group>))
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <button type="submit" class="btn btn-primary" style="background-color:#144365;border:none">Yarat</button>
+    </form>
+</div>
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+}
+

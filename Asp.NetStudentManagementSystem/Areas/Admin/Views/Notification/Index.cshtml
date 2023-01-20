@@ -1,0 +1,35 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Bildirişlər";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Notification>
+ <table class="subjects-table table table-striped table-bordered">
+     </table>
+
+    <a style="text-decoration:none;border:1px solid black; padding:7px;background-color:#f2f2f2;color:black" asp-controller="Notification" asp-action="Create">Yeni bildiriş yarat</a>
+    <table style="table-layout:auto" class="students-table table table-responsive table-striped table-bordered">
+         <thead>
+             <tr>
+                <th>Id</th>
+                <th>Başlıq</th>
+                <th>Yaradılma tarixi</th>
+                <th>Məzmun</th>
+                <th>Düzəliş et</th>
+        </tr>
+         </thead>
+         <tbody>
+             @foreach (var item in Model)
+             {
+                 <tr>
+                     <td>@item.Id</td>
+                     <td>@item.Title</td>
+                     <td>@item.DateTime.ToShortDateString()</td>
+                     <td>@item.Content</td>
+                      <td> <a style="text-decoration:none;border:1px solid black; padding:3px;background-color:#f2f2f2;color:black" asp-controller="Notification" asp-action="Update" asp-route-id="@item.Id">Düzəliş et</a></td>
+                 </tr>
+             }
+          </tbody>
+    </table>
+

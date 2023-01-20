@@ -1,0 +1,162 @@
+﻿@using Asp.NetStudentManagementSystem.Service
+@inject LayoutService layout
+@{
+    var userInfo = await layout.GetCurrentUserInfo();
+    var teacherInfo = await layout.GetCurrentTeacherInfo();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/assets/css/indexstyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="header-navbar navbar navbar-expand-lg">
+            <div class="container-fluid text-light">
+                <div class="header-navbar-logo d-flex justify-content-center align-items-center">
+                    <div class="header-navbar-logo__img me-3">
+                        <img src="https://unec.edu.az/application/uploads/2016/02/UNEC-logo-ENG-.png" width="65" alt="">
+                    </div>
+                    <h5 class="header-navbar-title">Azərbaycan Dövlət <br> İqtisad Universiteti</h5>
+                </div>
+                <div class="header-nav-breadcrumb">
+                    <span class="exit"><a class="exit text-decoration-nones" asp-controller="Account" asp-action="SignOut"><i class="fa-solid fa-door-open me-2"></i> Çıxış</a></span>
+                    <input type="checkbox" id="switch" />
+                    <label class="switch-label ms-4" for="switch">Toggle</label>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="d-flex">
+        <aside class="aside">
+            <div class="sidebar-wrapper">
+                <ul class="sidebar-menu">
+                    @if (User.IsInRole("SuperAdmin"))
+                    {
+                        <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="Index"><i class="fa-regular fa-bell me-2"></i><span class="sidebar-menu-title">Bildirişlər</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="PrivateChat"><i class="fa-regular fa-comments me-2"></i><span class="sidebar-menu-title">Canlı dəstək</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-area="Admin" asp-controller="Notification" asp-action="Index"><i class="fa-solid fa-sliders me-2"></i><span class="sidebar-menu-title">Admin Panel</span></a></li>
+
+                    }
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="Index"><i class="fa-regular fa-bell me-2"></i><span class="sidebar-menu-title">Bildirişlər</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="TeacherJournal" asp-action="Journal"><i class="fa-regular fa-file-lines me-2"></i><span class="sidebar-menu-title">Jurnal</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="TeacherJournal" asp-action="UpdateJournal"><i class="fa-regular fa-file-lines me-2"></i><span class="sidebar-menu-title">Jurnala Düzəliş</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="Redoc" asp-action="Index"><i class="fa-regular fa-file-lines me-2"></i><span class="sidebar-menu-title">Bir pəncərə xidməti</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="PrivateChat"><i class="fa-regular fa-comments me-2"></i><span class="sidebar-menu-title">Canlı dəstək</span></a></li>
+                    }
+                    @if (User.IsInRole("Member"))
+                    {
+                        <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="Index"><i class="fa-regular fa-bell me-2"></i><span class="sidebar-menu-title">Bildirişlər</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="StudentJournal" asp-action="Schedule"><i class="fa-regular fa-calendar me-2"></i><span class="sidebar-menu-title">Dərs cədvəli</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="StudentJournal" asp-action="Exam"><i class="fa-solid fa-desktop me-2"></i><span class="sidebar-menu-title">İmtahan cədvəli</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="StudentJournal" asp-action="Index"><i class="fa-solid fa-table-list me-2"></i><span class="sidebar-menu-title">Elektron jurnal</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="Files"><i class="fa-regular fa-folder-open me-2"></i><span class="sidebar-menu-title">Tədris materialları</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="Redoc" asp-action="Index"><i class="fa-regular fa-file-lines me-2"></i><span class="sidebar-menu-title">Bir pəncərə xidməti</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="PrivateChat"><i class="fa-regular fa-comments me-2"></i><span class="sidebar-menu-title">Canlı dəstək</span></a></li>
+                    }
+                </ul>
+            </div>
+        </aside>
+        <section id="main-content">
+            <div class="main-content-wrapper" style="height: 83vh;">
+                <div class="main-content-header p-2">
+                    <div class="sidebar-menu-toggle"><i class="fa-solid fa-bars fs-4"></i></div>
+                    <span class="main-content-name ms-2 fs-5">@ViewData["Title"]</span>
+                </div>
+                <div class="main-content-card">
+                    <div class="container">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="profile-card p-3 pt-4">
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="profile-card__picture mb-2">
+                    <img src="https://media.istockphoto.com/id/522855255/vector/male-profile-flat-blue-simple-icon-with-long-shadow.jpg?s=612x612&w=0&k=20&c=EQa9pV1fZEGfGCW_aEK5X_Gyob8YuRcOYCYZeuBzztM=" width="135" height="135" alt="">
+                </div>
+                <div class="profile-card__student-info">
+                    <div class="name-surname  mb-2">
+                        <span class="profile-card-item">Müəllim</span><br>
+                        <span>@teacherInfo.Surname</span> <span>@teacherInfo.Name</span>
+                    </div>
+                    <div class="specialty mb-2">
+                        <span class="profile-card-item">Dərs</span><br>
+                        <span>@teacherInfo.Subject.Name</span>
+                    </div>
+                    <div class="info-change-btn">
+                        <a asp-controller="Home" asp-action="ChangePassword">Profili dəyiş</a>
+                    </div>
+                </div>
+            }
+            else if (!User.IsInRole("Admin") && !User.IsInRole("SuperAdmin"))
+            {
+                <div class="profile-card__picture mb-2">
+                    <img src="https://media.istockphoto.com/id/522855255/vector/male-profile-flat-blue-simple-icon-with-long-shadow.jpg?s=612x612&w=0&k=20&c=EQa9pV1fZEGfGCW_aEK5X_Gyob8YuRcOYCYZeuBzztM=" width="135" height="135" alt="">
+                </div>
+                <div class="profile-card__student-info">
+                    <div class="name-surname  mb-2">
+                        <span class="profile-card-item">Tələbə</span><br>
+                        <span>@userInfo.Surname</span> <span>@userInfo.Name</span>
+                    </div>
+                    <div class="specialty mb-2">
+                        <span class="profile-card-item">İxtisas</span>   <br>
+                        @if (@userInfo.Group is null)
+                        {
+                            <span>Təyin edilməyib</span>
+                        }
+                        else
+                        {
+                            <span>@userInfo.Group.Department.Name</span>
+                        }
+                    </div>
+                    <div class="group mb-2">
+                        <span class="profile-card-item">Qrup</span><br>
+                        @if (@userInfo.Group is null)
+                        {
+                            <span>Təyin edilməyib</span>
+                        }
+                        else
+                        {
+                            <span>@userInfo.Group.Name</span>
+                        }
+                    </div>
+                    <div class="admittion-year mb-2">
+                        <span class="profile-card-item">Qəbul ili</span> <br>
+                        <span>2020</span>
+                    </div>
+                    <div class="status mb-3">
+                        <span class="profile-card-item">Təhsil statusu</span><br>
+                        @if (@userInfo.isActive == true)
+                        {
+                            <span>Təhsil alır</span>
+                        }
+                        else
+                        {
+                            <span>Təhsil dayandırılıb</span>
+                        }
+                    </div>
+                    <div class="info-change-btn">
+                        <a asp-controller="Home" asp-action="ChangePassword">Profili dəyiş</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </main>
+    <footer class="d-flex justify-content-center p-2" style="box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;"><span>This is a replication of Azerbaijan University Of Economics official website</span></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="~/assets/js/index.js"></script>
+    @RenderSection("scripts",false);
+</body>
+</html>

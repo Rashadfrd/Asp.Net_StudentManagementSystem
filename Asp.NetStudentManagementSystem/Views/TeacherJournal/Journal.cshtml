@@ -1,0 +1,58 @@
+﻿@using Asp.NetStudentManagementSystem.ViewModels
+
+@{
+    ViewData["Title"] = "Jurnal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model HomeVM
+
+
+<form class="filter-form" method="post" asp-controller="TeacherJournal" asp-action="GetJournal">
+    <select name="GroupId">
+      @foreach (var item in Model.GroupSubjects)
+      {
+        <option value="@item.Group.Id">@item.Group.Name</option>  
+      }
+    </select>
+    <input type="date" name="Date"/>
+    <button class="btn-submit" type="submit">Filtrləyin</button>
+</form>
+
+<div class="contentt">
+    <table class="students-table table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Tələbə (Ad Soyad)</th>
+            <th>Qiymət</th>
+            <th>İştirak</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            $(".filter-form").on("submit", function(e) {
+                e.preventDefault();
+                var data = $(this).serialize()
+                $.ajax({
+                    type:"POST",
+                    url: "/TeacherJournal/GetJournal",
+                    data: data,
+                    success: function(res){
+                        console.log(res)
+                    },
+                }).done(function(res) {
+                    $(".contentt").empty();
+                    $(".contentt").html(res);
+                })
+            })
+        })
+    </script>
+}
+

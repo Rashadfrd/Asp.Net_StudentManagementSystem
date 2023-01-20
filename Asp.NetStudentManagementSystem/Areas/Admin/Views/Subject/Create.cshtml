@@ -1,0 +1,29 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Dərs Yarat";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model Subject
+<table class="subjects-table table table-striped table-bordered">
+</table>
+<div class="container d-flex justify-content-center">
+    <form class="col-6" method="post" asp-controller="Subject" asp-action="Create">
+        <label asp-for="Name">Dərsin adı</label>
+        <input class="form-control" asp-for="Name" /> <br />
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+
+        <label asp-for="Hours">Dərs saatı</label>
+        <input class="form-control" type="number" asp-for="Hours" /> <br />
+        <span class="text-danger" asp-validation-for="Hours"></span>
+
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <button type="submit" class="btn btn-primary" style="background-color:#144365;border:none">Yarat</button>
+    </form>
+</div>
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+}

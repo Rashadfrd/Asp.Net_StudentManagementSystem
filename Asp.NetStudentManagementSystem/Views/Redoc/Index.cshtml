@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutRedoc.cshtml";
+}
+
+<section id="info-petitionRequest">
+    <div class="container p-5">
+        <div class="info text-center">
+            <h1>Tələbə işlər mərkəzi</h1>
+            <h2>Bir pəncərə xidməti</h2>
+            <p class="mt-5">
+                Səhifədən tədris müddətində tələb olunan sənədlər haqqında məlumat
+                əldə edə və elektron müraciətlər yollaya bilərsiniz.
+            </p>
+            <p>
+                “Elektron imza və elektron sənəd haqqında” Azərbaycan Respublikası Qanununun 3-cü maddəsinə əsasən elektron imza əl imzası ilə bərabər hüquqi qüvvəyə malikdir. Elektron imza şəxsin kağız daşıyıcı üzərindəki möhürlə təsdiq edilmiş əl imzasına bərabər tutulur.
+            </p>
+        </div>
+        <div class="request-status d-flex justify-content-center mt-5">
+            <a asp-controller="Redoc" asp-action="FormAppeal" class="btn btn-success w-50">Müraciət</a>
+        </div>
+    </div>
+</section>
+<section id="faq" class="bg-light text-center p-4">
+    <div class="faq-title"><h2>Tez-tez verilən suallar</h2></div>
+    <div class="mt-5">
+
+        <button class="accordion">Elektron sənədin Notarial təsdiqi neçə baş verir?</button>
+        <div class="accordion-content">
+            <p>
+                Sizin elektron poçtunuza göndərilən sənədin (arayış, transkript, attestat, əmrdən çıxarış və s.) və ya sənədin tərcüməsinin notarial təsdiqi üçün notariusa yaxınlaşıb ərizə ilə müraciət etməlisiniz. Notarius internet vasitəsiylə sənədin elektron formasını özü çap eləyib lazımi prosedurları yerinə yetirəcək. Siz tərəfdən sənədin çap edilməsinə ehtiyac yoxdur. Bu AZƏRBAYCAN RESPUBLİKASININ QANUNU 762-İQ –Notariat haqqında Qanunun XI fəsil- SƏNƏDLƏRİN SURƏTLƏRİNİN VƏ SƏNƏDLƏRDƏN ÇIXARIŞLARIN DÜZGÜNLÜYÜNÜN, İMZANIN HƏQİQİLİYİNİN VƏ TƏRCÜMƏNİN DÜZGÜNLÜYÜNÜN TƏSDİQ EDİLMƏSİ - 64-cü maddəsində öz əksini tapıb.
+            </p>
+        </div>
+
+        <button class="accordion">Akademik təqvimdə hansı məlumatlar qeyd olunur?</button>
+        <div class="accordion-content">
+            <p>
+                Hər tədris ilinin əvvəlində UNEC-in rəsmi internet səhifəsində akademik təqvim (http://unec.edu.az/akademik-teqvim/) elan olunur.
+
+                Akademik təqvimdə aşağıdakı məlumatlar qeyd olunur:
+
+                - fərdi tədris planlarının tərtib edilməsi və dəyişikliklərin edilməsi (alt qruplara yazılma
+                və s.) tarixləri;
+                - semestrin başlama və bitmə tarixləri;
+                - təhsil haqlarının ödənməsi tarixləri;
+                - sərbəst işlərin təqdim edilməsi tarixləri;
+                - kollokvium və imtahanların tarixləri;
+                - tələbələrin təcrübələrinin başlanma və bitmə tarixləri;
+                - Yekun Dövlət Attestasiyasının tarixləri;
+                - yay semestrinin başlama və bitmə tarixləri.
+            </p>
+        </div>
+
+        <button class="accordion">Tələbələrin ixtisasını və (və ya) təhsilalma formasını dəyişməsi, bir ali təhsil müəssisəsindən digərinə köçürülməsi nə vaxt həyata keçirilir?</button>
+        <div class="accordion-content">
+            <p>
+                - Tələbələrin ixtisasını və (və ya) təhsilalma formasını dəyişməsi, bir ali təhsil müəssisəsindən digərinə köçürülməsi birinci semestr başa çatdıqdan sonra həyata keçirilir. (Q-2.1.)
+            </p>
+        </div>
+
+        <button class="accordion">Tələbə hansı hallarda ali təhsil müəssisəsindən xaric edilir</button>
+        <div class="accordion-content">
+            <p>
+                - Tələbə aşağıdakı hallarda ali təhsil müəssisəsindən xaric edilir:
+
+                1. öz arzusu ilə;
+                2. başqa ali təhsil müəssisəsinə köçürüldükdə;
+                3. ali təhsil müəssisəsinin daxili intizam qaydalarını kobud şəkildə pozduqda;
+                4. səhhətinə görə (həkim-məsləhət komissiyasının arayışına əsasən);
+                5. növbəti tədris ilinə qeydiyyatdan keçməyib həmin tədris ilinin payız semestrinin sonuna qədər ali təhsil müəssisəsi ilə əlaqə saxlamadıqda. (Q-3.1.)
+            </p>
+        </div>
+
+        <button class="accordion">Ali təhsil müəssisəsindən xaric olunmuş şəxsin həmin ali təhsil müəssisəsinə öz ixtisası üzrə bərpası hansı qaydalarla həyata keçirilir</button>
+        <div class="accordion-content">
+            <p>
+                - Azərbaycan Respublikasının ali təhsil müəssisəsindən xaric olunmuş şəxsin həmin ali təhsil müəssisəsinə öz ixtisası üzrə bərpası onun ərizəsi əsasında ali təhsil müəssisəsinin rektorunun əmri ilə həyata keçirilir. Bütün digər hallarda tələbənin bərpası Azərbaycan Respublikası Təhsil Nazirliyinin razılığı ilə ali təhsil müəssisəsinin vəsatəti əsasında həyata keçirilir. Bərpa barədə ərizəyə arxiv arayışı və əvvəlki təhsil haqqında sənədin əsli əlavə edilir. (Q-4.2.)
+            </p>
+        </div>
+
+        <button class="accordion">Təhsil haqlarını harada və necə ödəmək olar</button>
+        <div class="accordion-content">
+            <p>
+                * təhsilalanın şəxsiyyət vəsiqəsinin nömrəsini təqdim etməklə istənilən bank və poçt filiallarında
+
+                * www.gpp.az saytı vasitəsilə onlayn şəkildə
+
+                * “Kapitalbank” ASC-nin ödəniş terminalları ilə
+
+                * UNEC-in hesabına köçürmə yolu ilə
+            </p>
+        </div>
+    </div>
+</section>

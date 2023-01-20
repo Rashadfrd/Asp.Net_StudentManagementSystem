@@ -1,0 +1,47 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "DocumentStatus";
+    Layout = "~/Views/Shared/_LayoutRedoc.cshtml";
+}
+
+@model IEnumerable<UserDocument>
+
+
+<table class="subjects-table table table-striped table-bordered">
+</table>
+
+
+<div class="container d-flex justify-content-center p-3">
+    <div class="document-status w-75 p-5">
+        <div class="title m-4 text-center"><h1>Ərizə Statusu</h1></div>
+        <table style="table-layout:auto" class="table table-responsive table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Ərizə növü</th>
+                    <th>Hazırlanma müddəti</th>
+                    <th>Təqdim ediləcək müəssisə</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><span>@item.Document.Name</span></td>
+                        <td><span>@item.Document.Duration</span></td>
+                        <td><span>@item.ToWhere</span></td>
+                        @if (@item.isReady)
+                        {
+                            <td><span class="text-success">Hazır</span></td>
+                        }
+                        else
+                        {
+                            <td><span class="text-danger">Gözləmədə</span></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

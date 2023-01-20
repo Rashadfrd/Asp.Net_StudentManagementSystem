@@ -1,0 +1,53 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "İmtahanlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Exam>
+
+    @if (Model is null)
+    {
+         <table class="subjects-table table table-striped table-bordered">
+         <thead>
+             <tr>
+                 <th class="text-center">Imtahan Tarixi</th>
+                 <th class="text-center">Qrup</th>
+                <th class="text-center">Imtahan Fənni</th>
+            </tr>
+         </thead>
+          <tbody>
+              <tr>
+                  <td colspan="3">Imtahan nəzərdə tutulmayıb</td>
+              </tr>
+         </tbody>
+        </table>
+    }
+    else
+    {
+    
+        <table class="subjects-table table table-striped table-bordered">
+         <thead>
+             <tr>
+                 <th class="text-center">Imtahan Tarixi</th>
+                 <th class="text-center">Qrup</th>
+                <th class="text-center">Imtahan Fənni</th>
+            </tr>
+         </thead>
+          <tbody>
+             @foreach (var item in Model)
+             {
+                 <tr>
+                     <td align="center" style="display:flex;flex-direction:column">
+                           <span>@item.Date.ToShortDateString()</span>
+                          <span>Başlama-bitmə : @item.Date.ToShortTimeString() - @item.Date.AddHours(3).ToShortTimeString()</span>
+                     </td>
+                     <td align="center">@item.Group.Name</td>
+                     <td align="center">@item.Subject.Name</td>
+                </tr>
+             }
+         </tbody>
+</table>
+    }
+

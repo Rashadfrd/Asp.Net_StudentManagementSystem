@@ -1,0 +1,254 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Cədvəl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Schedule>
+@*    @if (Model is null)
+    {
+         <table class="subjects-table table table-striped table-bordered">
+         <thead>
+             <tr>
+                 <th class="text-center">Gün</th>
+                <th class="text-center">Fənn</th>
+            </tr>
+         </thead>
+          <tbody>
+              <tr>
+                  <td colspan="3">Imtahan nəzərdə tutulmayıb</td>
+              </tr>
+         </tbody>
+        </table>
+    }
+    else
+    {
+
+        <table class="subjects-table table table-striped table-bordered">
+         <thead>
+             <tr>
+                 <th class="text-center">Gün</th>
+                <th class="text-center">Fənn</th>
+            </tr>
+         </thead>
+          <tbody>
+             @foreach (var item in Model)
+             {
+                 <tr>
+                     <td>@item.LessonDay.Name</td>
+                     <td align="center" style="display:flex;flex-direction:column">
+                           <span>@item.Subject.Name</span>
+                           <span>@item.Room</span>
+                          <span>Başlama-bitmə : @item.LessonHour.Begin - @item.LessonHour.End</span>
+                     </td>
+                </tr>
+             }
+         </tbody>
+</table>
+    }*@
+
+<table class="subjects-table table table-striped table-bordered text-center">
+    <thead>
+        <tr>
+            <th>Saat</th>
+            <th>Bazar ertəsi</th>
+            <th>Çərşənbə axşamı</th>
+            <th>Çərşənbə</th>
+            <th>Cümə axşamı</th>
+            <th>Cümə</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th class="text-center">08:30-09:50</th>
+            <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 1 && x.LessonDay.Id == 1) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 1 && x.LessonDay.Id == 1);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br /> 
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+            <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 1 && x.LessonDay.Id == 2) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 1 && x.LessonDay.Id == 2);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br /> 
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+            <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 1 && x.LessonDay.Id == 3) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 1 && x.LessonDay.Id == 3);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br /> 
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+             <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 1 && x.LessonDay.Id == 4) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 1 && x.LessonDay.Id == 4);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br /> 
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+             <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 1 && x.LessonDay.Id == 5) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 1 && x.LessonDay.Id == 5);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br /> 
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <th class="text-center">10:00-11:20</th>
+             <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 2 && x.LessonDay.Id == 1) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 2 && x.LessonDay.Id == 1);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br /> 
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+             <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 2 && x.LessonDay.Id == 2) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 2 && x.LessonDay.Id == 2);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br /> 
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+             <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 2 && x.LessonDay.Id == 3) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 2 && x.LessonDay.Id == 3);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br />  
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+             <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 2 && x.LessonDay.Id == 4) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 2 && x.LessonDay.Id == 4);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br /> 
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+             <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 2 && x.LessonDay.Id == 5) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 2 && x.LessonDay.Id == 5);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br /> 
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <th class="text-center">11:30-12:50</th>
+            <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 3 && x.LessonDay.Id == 1) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 3 && x.LessonDay.Id == 1);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br />  
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+            <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 3 && x.LessonDay.Id == 2) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 3 && x.LessonDay.Id == 2);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br />  
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+            <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 3 && x.LessonDay.Id == 3) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 3 && x.LessonDay.Id == 3);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br />  
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+            <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 3 && x.LessonDay.Id == 4) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 3 && x.LessonDay.Id == 4);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br />  
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+            <td>
+                @if (Model.FirstOrDefault(x=>x.LessonHour.Id == 3 && x.LessonDay.Id == 5) != null)
+                {
+                    var info = Model.FirstOrDefault(x => x.LessonHour.Id == 3 && x.LessonDay.Id == 5);
+                    <span>@info.Subject.Name</span> <br />
+                    <span>Otaq(@info.Room)</span> <br />  
+                }
+                else
+                {
+                    <span>Boş</span>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
+

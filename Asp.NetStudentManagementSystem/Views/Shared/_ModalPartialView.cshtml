@@ -1,0 +1,13 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@model Notification
+<div class="modal-header">
+    <div class="uniInfo-card-content-title fs-3"> <p>@Model.Title</p></div>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <div class="uniInfo-card-content-date mb-3"><span>Bildiriş tarixi</span> <span>@Model.DateTime.ToShortDateString()</span></div>
+    <div class="uniInfo-card-content-text">
+        <p>@Model.Content</p>
+    </div>
+</div>

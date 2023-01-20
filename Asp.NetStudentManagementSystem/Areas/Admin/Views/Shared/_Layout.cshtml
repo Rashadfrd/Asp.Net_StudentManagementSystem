@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/assets/css/indexstyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="header-navbar navbar navbar-expand-lg">
+            <div class="container-fluid text-light">
+                <div class="header-navbar-logo d-flex justify-content-center align-items-center">
+                    <div class="header-navbar-logo__img me-3">
+                        <img src="https://unec.edu.az/application/uploads/2016/02/UNEC-logo-ENG-.png" width="65" alt="">
+                    </div>
+                    <h5 class="header-navbar-title">Azərbaycan Dövlət <br> İqtisad Universiteti</h5>
+                </div>
+                <div class="header-nav-breadcrumb">
+                    <span class="exit"><i class="fa-solid fa-door-open me-2"></i> <a class="exit" asp-controller="Account" asp-action="SignOut">Çıxış</a></span>
+                    <input type="checkbox" id="switch" />
+                    <label class="switch-label ms-4" for="switch">Toggle</label>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="d-flex">
+        <aside class="aside">
+            <div class="sidebar-wrapper">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu__item"><a asp-controller="Notification" asp-action="Index"><i class="fa-regular fa-bell me-2"></i><span class="sidebar-menu-title">Bildirişlər</span></a></li>
+                    <li class="sidebar-menu__item"><a asp-controller="Exam" asp-action="Index"><i class="fa-solid fa-table-list me-2"></i><span class="sidebar-menu-title">İmtahanlar</span></a></li>
+                    <li class="sidebar-menu__item"><a asp-controller="Schedule" asp-action="Index"><i class="fa-solid fa-table-list me-2"></i><span class="sidebar-menu-title">Cədvəllər</span></a></li>
+                    <li class="sidebar-menu__item"><a asp-controller="Teacher" asp-action="Index"><i class="fa-solid fa-user me-2"></i><span class="sidebar-menu-title">Müəllimlər</span></a></li>
+                    <li class="sidebar-menu__item"><a asp-controller="Group" asp-action="Index"><i class="fa-solid fa-users-viewfinder me-2"></i><span class="sidebar-menu-title">Qruplar</span></a></li>
+                    <li class="sidebar-menu__item"><a asp-controller="Student" asp-action="Index"><i class="fa-solid fa-user me-2"></i><span class="sidebar-menu-title">Tələbələr</span></a></li>
+                    <li class="sidebar-menu__item"><a asp-controller="Document" asp-action="Index"><i class="fa-regular fa-folder-open me-2"></i><span class="sidebar-menu-title">Ərizələr</span></a></li>
+                    <li class="sidebar-menu__item"><a asp-controller="Subject" asp-action="Index"><i class="fa-solid fa-table-list me-2"></i><span class="sidebar-menu-title">Dərslər</span></a></li>
+                </ul>
+            </div>
+        </aside>
+        <section id="main-content">
+            <div class="main-content-wrapper">
+                <div class="main-content-header p-2">
+                    <div class="sidebar-menu-toggle"><i class="fa-solid fa-bars fs-4"></i></div>
+                    <span class="main-content-name ms-2 fs-5">@ViewData["Title"]</span>
+                </div>
+                <div class="main-content-card">
+                    <div class="container">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+ <footer class="d-flex justify-content-center p-2" style="box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;"><span>This is a replication of Azerbaijan University Of Economics official website</span></footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous"referrerpolicy="no-referrer"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      <script src="~/assets/js/index.js"></script>
+      @RenderSection("scripts",false);
+</body>
+</html>

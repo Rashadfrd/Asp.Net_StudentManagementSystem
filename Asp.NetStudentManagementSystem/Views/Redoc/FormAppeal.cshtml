@@ -1,0 +1,71 @@
+﻿@using Asp.NetStudentManagementSystem.ViewModels
+
+@{
+    ViewData["Title"] = "FormAppeal";
+    Layout = "~/Views/Shared/_LayoutRedoc.cshtml";
+}
+@model RedocVM
+
+        <section id="petition-infos-submit" class="p-5">
+            <div class="container w-50 pt-1 p-3">
+                <div class="title text-center"><h2>Ərizə növünü seçin və məlumatları daxil edin</h2></div>
+                 <div class="personal-infos mt-4">
+                    <div class="personal-info-item mb-3">
+                        <span>Email</span>
+                        <span>@Model.Student.Email</span>
+                    </div>
+                    <div class="personal-info-item mb-3">
+                        <span>Ad Soyad Ata adı</span>
+                        <span>@Model.Student.Name @Model.Student.Surname @Model.Student.FatherName</span>
+                    </div>
+                    <div class="personal-info-item mb-3">
+                        <span>İxtisas</span>
+                        <span>@Model.Student.Group.Department.Name</span>
+                    </div>
+                    <div class="personal-info-item mb-3">
+                        <span>Qrup</span>
+                        <span>@Model.Student.Group.Name</span>
+                    </div>
+                    <div class="personal-info-item mb-3">
+                        <span>Qəbul ili</span>
+                        <span>2020</span>
+                    </div>
+                 </div>
+                 <div class="petition-form">
+                    <form method="post" asp-controller="Redoc" asp-action="FormAppeal">
+                        <div class="petition-form-item mb-3">
+                            <label for="DocumentId">Ərizə növləri</label>
+                            <select name="DocumentId" id="DocumentId" class="petition-types">
+                                @foreach (var item in Model.Documents )
+                                {
+                                 <option data-duration="@item.Duration" class="doc-info" value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="petition-form-item mb-3">
+                            <label class="petition-making-duration">İcra müddəti: xx iş günü</label>
+                        </div>
+                        <div class="petition-form-item mb-3">
+                            <label for="ToWhere">Təqdim edəcəyiniz müəssisənin adını daxil edin</label>
+                            <input name="ToWhere" id="ToWhere" type="text">
+                        </div>
+                        <div class="petition-form-item validate-btn mt-5">
+                            <button type="submit" class="btn btn-primary validate">Göndər</button>
+                        </div>
+                    </form>
+                 </div>
+            </div>
+        </section>
+
+        @section scripts{
+            <script>
+                $(document).ready(()=>{
+                     $(document).on("change", ".petition-types", function(e) {
+                        e.preventDefault();
+                         var attr = $(this).find(':selected').attr('data-duration');
+                        $('.petition-making-duration').text(`İcra müddəti: ${attr} iş günü`)
+                    })
+                })
+            </script>
+        }
+

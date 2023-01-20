@@ -1,0 +1,40 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Cədvəllər";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Schedule>
+ <table class="subjects-table table table-striped table-bordered">
+     </table>
+
+     <a style="text-decoration:none;border:1px solid black; padding:3px;background-color:#f2f2f2;color:black" asp-controller="Schedule" asp-action="Create">Yeni cədvəl yarat</a>
+    <table style="table-layout:auto" class="table table-responsive table-striped table-bordered">
+         <thead>
+             <tr>
+                <th>Id</th>
+                <th>Otaq</th>
+                <th>Saat</th>
+                <th>Gün</th>
+                <th>Qrup</th>
+                <th>Dərs</th>
+                <th>Düzəliş et</th>
+        </tr>
+         </thead>
+         <tbody>
+             @foreach (var item in Model)
+             {
+                 <tr>
+                     <td>@item.Id</td>
+                     <td>@item.Room</td>
+                     <td>@item.LessonHour.Begin - @item.LessonHour.End</td>
+                     <td>@item.LessonDay.Name</td>
+                     <td>@item.Group.Name</td>
+                     <td>@item.Subject.Name</td>
+                     <td><a style="text-decoration:none;border:1px solid black; padding:3px;background-color:#f2f2f2;color:black" asp-controller="Schedule" asp-action="Update" asp-route-id="@item.Id">Düzəliş et</a></td>
+                 </tr>
+             }
+          </tbody>
+    </table>
+

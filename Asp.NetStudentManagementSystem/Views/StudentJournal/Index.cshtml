@@ -1,0 +1,70 @@
+﻿@using Asp.NetStudentManagementSystem.ViewModels
+
+@{
+    ViewData["Title"] = "Jurnal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model StudentJournalVM
+
+
+<div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dərsi seçin
+  </button>
+  <ul class="dropdown-menu">
+      @foreach (var item in Model.GroupSubjects)
+      {
+        <li><a class="dropdown-item" asp-route-id="@item.Id">@item.Subject.Name</a></li>
+      }
+  </ul>
+</div>
+
+<table class="subjects-table table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Tarix</th>
+            <th>Dərs</th>
+            <th>Tələbə</th>
+            <th>Qiymət</th>
+            <th>İştirak</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @if (Model.Attendances is null)
+            {
+                <td align="center" colspan="5">Nəticə yoxdur</td>
+            }
+            else
+            {
+            foreach (var item in Model.Attendances)
+            {
+                <tr>
+                    <td>@item.Date.ToShortDateString()</td>
+                    <td>@item.Subject.Name</td>
+                    <td>@item.Student.Name @item.Student.Surname</td>
+                    @if (@item.Grade is null)
+                    {
+                     <td>Qiymətsiz</td>
+                    }
+                    else
+                    {
+                    <td>@item.Grade</td>  
+                    }
+                    @if (item.IsPresent == true)
+                    {
+                    <td>i/e</td>
+                    }
+                    else
+                    {
+                    <td>q/b</td>
+                    }
+                    
+                </tr>
+            }
+            }
+        </tr>
+    </tbody>
+</table>
+

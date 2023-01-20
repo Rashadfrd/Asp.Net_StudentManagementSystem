@@ -1,0 +1,51 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Bildirişlər";
+}
+@model IEnumerable<Notification>
+
+<table class="subjects-table table table-striped table-bordered">
+</table>
+@foreach (var item in Model)
+{
+    <div class="uniInfo-card d-flex mb-3">
+        <div class="me-3 line"></div>
+        <div class="uniInfo-card-content">
+            <div class="uniInfo-card-content-title fs-3"> <p>@item.Title</p></div>
+            <div class="uniInfo-card-content-date mb-3"><span>Bildiriş tarixi :</span> <span>@item.DateTime.ToShortDateString()</span></div>
+            <div class="uniInfo-card-content-text">
+                <p>@item.Content</p>
+            </div>
+            <!-- Button trigger modal -->
+            <a asp-controller="Home" asp-action="Modal" asp-route-id="@item.Id" class="uniInfo-card-content-more text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">Ətraflı oxu</a>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog-centered modal-dialog">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section scripts {
+    <script>
+        $(document).ready(function() {
+            $(document).on("click", ".uniInfo-card-content-more", function(e) {
+                e.preventDefault();
+                let url = $(this).attr("href")
+                getProduct(url)
+            })
+        })
+        function getProduct(url) {
+            $.ajax({
+                type: "GET",
+                url: url,
+            }).done(function(res) {
+                $(".modal-content").html(res)
+            });
+        }
+    </script>
+}
