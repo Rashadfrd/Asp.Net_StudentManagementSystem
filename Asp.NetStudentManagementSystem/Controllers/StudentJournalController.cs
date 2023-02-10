@@ -53,5 +53,38 @@ namespace Asp.NetStudentManagementSystem.Controllers
                 .Where(x => x.GroupId == currentStudent.GroupId && x.isDeleted == false);
             return View(exam);
         }
+
+        public async Task<IActionResult> Appeal()
+        {
+            var currentStudent = await _userManager.GetUserAsync(User);
+            var studentAppeals = _context.StudentAppeals.Include(x => x.AppUser).Include(x => x.Subject).Where(x=> x.AppUserId == currentStudent.Id && x.IsAllowed == true);
+            return View(studentAppeals);
+        }
+
+        public async Task<IActionResult> AppealCreate()
+        {
+            ViewBag.IsSent = false;
+            ViewBag.Subjects = _context.Subjects.ToList();
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AppealCreate(StudentAppeal appeal)
+        {
+
+            ViewBag.Subjects = _context.Subjects.ToList();
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            appeal.Date = DateTime.Now;
+            appeal.AppUserId = currentUser.Id;
+            appeal.IsActive = true;
+            appeal.IsAllowed = false;
+            if (!ModelState.IsValid) return View();
+            ViewBag.IsSent = true;
+
+            _context.StudentAppeals.Add(appeal);
+            _context.SaveChanges();
+            return View();
+        }
     }
 }

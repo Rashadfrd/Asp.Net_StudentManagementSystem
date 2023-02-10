@@ -1,0 +1,45 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model StudentAppeal
+<table class="subjects-table table table-striped table-bordered">
+</table>
+<div class="container d-flex justify-content-center p-3">
+    <form class="col-6" method="post" asp-controller="Appeal" asp-action="Update">
+        <label asp-for="AppUser.Email">Müraciətçi</label>
+        <input disabled class="form-control" asp-for="AppUser.Email" />
+
+        <label asp-for="Subject.Name">Fənn</label>
+        <input disabled class="form-control" asp-for="Subject.Name" />
+
+        <label asp-for="Content">Məzmun</label>
+        <input disabled class="form-control" asp-for="Content" />
+
+
+        <div class="form-input-control mt-2 mb-3">
+            <select asp-for="IsAllowed" class="gender-selection w-100 form-control">
+                <option value="true">Əsaslı</option>
+                <option value="false">Əsassız</option>
+            </select>
+        </div>
+
+        <div class="form-input-control mt-2 mb-3">
+            <select asp-for="IsActive" class="gender-selection w-100 form-control">
+                <option value="true">Aktiv</option>
+                <option value="false">Deaktiv</option>
+            </select>
+        </div>
+
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <button type="submit" class="admin-buttons">Düzəliş et</button>
+    </form>
+</div>
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+}
+

@@ -1,0 +1,45 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Appealyasiya Müraciət";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model StudentAppeal
+<table class="subjects-table table table-striped table-bordered">
+</table>
+
+<div class="container d-flex justify-content-center">
+    @if (ViewBag.IsSent == true)
+    {
+        <div class="d-flex justify-content-center">
+            <div class="alert alert-success text-center" style="height:60px;width:50vw" role="alert">
+                <span class="text-dark">Sizin appelyasiya müraciətiniz qəbul olunmuşdur.</span>
+            </div>
+        </div>
+    }
+    else
+    {
+       
+    <form class="col-6" method="post" asp-controller="StudentJournal" asp-action="AppealCreate">
+
+        <label asp-for="Content">Məzmun</label>
+        <input class="form-control" asp-for="Content" /> <br />
+        <span class="text-danger" asp-validation-for="Content"></span>
+
+        <div class="form-input-control">
+            <select asp-for="SubjectId" class="gender-selection w-100 form-control">
+                <option value="">-- Fənni seçin --</option>
+                @foreach (var item in (ViewBag.Subjects as List<Subject>))
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+            <span class="text-danger" asp-validation-for="SubjectId"></span>
+        </div>
+
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <button type="submit" class="admin-buttons mt-3">Yarat</button>
+    </form>
+    }
+</div>
+

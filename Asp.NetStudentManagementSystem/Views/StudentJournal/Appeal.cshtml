@@ -1,0 +1,47 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Appelyasiya";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<StudentAppeal>
+
+<table class="subjects-table table table-striped table-bordered">
+</table>
+
+<table style="table-layout:auto" class="table table-responsive table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Fənn</th>
+            <th>Şikayətin tarixi</th>
+            <th>Şikayətin məzmunu</th>
+            <th>Şikayətin statusu</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr> <td colspan="4" class="text-center">Nəticə yoxdur </td> </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Subject.Name</td>
+                    <td>@item.Date.ToShortDateString()</td>
+                    <td>@item.Content</td>
+                    @if (item.IsActive)
+                    {
+                        <td class="text-success" style="font-weight:bold">Aktiv</td>
+                    }
+                    else
+                    {
+                        <td class="text-danger" style="font-weight:bold">Deaktiv</td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

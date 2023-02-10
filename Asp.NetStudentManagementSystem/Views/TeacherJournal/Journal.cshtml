@@ -9,17 +9,19 @@
 
 
 <form class="filter-form" method="post" asp-controller="TeacherJournal" asp-action="GetJournal">
-    <select name="GroupId">
+    <select name="GroupId" style="height:40px; border-radius:5px; border:1px solid #ccc" >
       @foreach (var item in Model.GroupSubjects)
       {
         <option value="@item.Group.Id">@item.Group.Name</option>  
       }
     </select>
-    <input type="date" name="Date"/>
-    <button class="btn-submit" type="submit">Filtrləyin</button>
+
+    <input type="date" name="Date" style="height:40px; border-radius:5px; border:1px solid #ccc"/>
+    <span class="text-danger" asp-validation-for="Date"></span>
+    <button class="btn-submit admin-buttons" type="submit">Filtrləyin</button>
 </form>
 
-<div class="contentt">
+<div class="contentt mt-2">
     <table class="students-table table table-striped table-bordered">
     <thead>
         <tr>

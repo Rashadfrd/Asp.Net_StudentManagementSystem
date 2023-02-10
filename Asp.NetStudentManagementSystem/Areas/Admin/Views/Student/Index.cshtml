@@ -9,7 +9,7 @@
 <table class="subjects-table table table-striped table-bordered">
 </table>
 
-<a style="text-decoration:none;border:1px solid black; padding:7px;background-color:#f2f2f2;color:black" asp-controller="Student" asp-action="Create">Yeni tələbə yarat</a>
+<a class="admin-buttons" asp-controller="Student" asp-action="Create">Yeni tələbə yarat</a>
 <table style="table-layout:auto" class="table table-responsive table-striped table-bordered">
     <thead>
         <tr>
@@ -52,7 +52,7 @@
                 {
                     <td><span class="text-danger" style="font-weight:bold">Qeyri/Aktiv</span></td>
                 }
-                 <td> <a style="text-decoration:none;border:1px solid black; padding:3px;background-color:#f2f2f2;color:black" asp-controller="Student" asp-action="Update" asp-route-id="@item.Id">Düzəliş et</a></td>
+                 <td> <a class="admin-buttons" asp-controller="Student" asp-action="Update" asp-route-id="@item.Id">Düzəliş et</a></td>
             </tr>
         }
     </tbody>

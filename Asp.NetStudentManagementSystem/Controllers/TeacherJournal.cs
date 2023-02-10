@@ -41,8 +41,18 @@ namespace Asp.NetStudentManagementSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetUpdateJournal(int GroupId, DateTime Date)
+        public async Task<IActionResult> GetUpdateJournal(int? GroupId, DateTime? Date)
         {
+            if (GroupId is null)
+            {
+                ModelState.AddModelError("GroupId", "Cannot be empty");
+                return RedirectToAction(nameof(Journal));
+            }
+            if (Date is null)
+            {
+                ModelState.AddModelError("Date", "Cannot be empty");
+                return View();
+            }
             HomeVM vm = new HomeVM();
             var currentUser = await _userManager.GetUserAsync(User);
             Teacher currentTeacher = _context.Teachers.FirstOrDefault(x => x.Email == currentUser.Email);
@@ -56,8 +66,18 @@ namespace Asp.NetStudentManagementSystem.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> GetJournal(int GroupId, DateTime Date)
+        public async Task<IActionResult> GetJournal(int? GroupId, DateTime? Date)
         {
+            if (GroupId is null)
+            {
+                ModelState.AddModelError("GroupId", "Cannot be empty");
+                return RedirectToAction(nameof(Journal));
+            }
+            if (Date is null)
+            {
+                ModelState.AddModelError("Date", "Cannot be empty");
+                return View();
+            }
             HomeVM vm = new HomeVM();
             var currentUser = await _userManager.GetUserAsync(User);
             Teacher currentTeacher = _context.Teachers.FirstOrDefault(x => x.Email == currentUser.Email);
@@ -79,7 +99,7 @@ namespace Asp.NetStudentManagementSystem.Controllers
             //vm.CurrentStudent = _context.UserInfos.Include(x=>x.Attendances).ThenInclude(x=>x.Subject).FirstOrDefault(x => x.Email == currentUser.Email);
 
             vm.Attendance = _context.Attendances.Include(x => x.Student).Include(x => x.Subject).Where(x => x.Date == Date && x.SubjectId == currentTeacher.SubjectId && x.Student.GroupId == GroupId).ToList();
-            vm.Date = Date;
+            vm.Date = (DateTime)Date;
 
             return PartialView("_JournalPartialView", vm);
         }

@@ -88,7 +88,11 @@ aside{
     border-radius: 3px;
     padding: 6% 10%;
 }
-.sidebar-menu-toggle{
+.info-change-btn:hover a {
+    background-color: #339ea6;
+}
+
+.sidebar-menu-toggle {
     cursor: pointer;
     display: inline;
 }
@@ -207,4 +211,17 @@ table{
 }
 .exit{
     color:white;
+}
+.admin-buttons {
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 7px;
+    background-color: #144365;
+    color: white;
+    border-radius: 5px;
+    transition:.150s
+}
+.admin-buttons:hover{
+    color:black;
+    background-color:white;
 }

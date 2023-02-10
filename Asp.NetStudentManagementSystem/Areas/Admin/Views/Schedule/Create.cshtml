@@ -15,7 +15,7 @@
         <span class="text-danger" asp-validation-for="Room"></span>
 
         <div class="form-input-control mt-2">
-            <select asp-for="LessonHourId" class="gender-selection w-100">
+            <select asp-for="LessonHourId" class="gender-selection w-100 form-control">
                 <option value="">-- Saatı seçin --</option>
                 @foreach (var item in (ViewBag.Time as List<LessonHour>))
                 {
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-input-control mt-2">
-            <select asp-for="LessonDayId" class="gender-selection w-100">
+            <select asp-for="LessonDayId" class="gender-selection w-100 form-control">
                 <option value="">-- Günü seçin --</option>
                 @foreach (var item in (ViewBag.Days as List<LessonDay>))
                 {
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-input-control mt-2">
-            <select asp-for="SubjectId" class="gender-selection w-100">
+            <select asp-for="SubjectId" class="gender-selection w-100 form-control">
                 <option value="">-- Fənni seçin --</option>
                 @foreach (var item in (ViewBag.Subjects as List<Subject>))
                 {
@@ -44,7 +44,7 @@
             </select>
         </div>
         <div class="form-input-control mt-2 mb-3">
-            <select asp-for="GroupId" class="gender-selection w-100">
+            <select asp-for="GroupId" class="gender-selection w-100 form-control">
                 <option value="">-- Qrupu seçin --</option>
                 @foreach (var item in (ViewBag.Groups as List<Group>))
                 {

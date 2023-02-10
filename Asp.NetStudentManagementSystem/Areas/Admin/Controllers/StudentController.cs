@@ -76,7 +76,7 @@ namespace Asp.NetStudentManagementSystem.Areas.Admin.Controllers
                 }
                 return View();
             }
-            await _userManager.AddToRoleAsync(await _userManager.FindByEmailAsync(userCreate.Email), Roles.SuperAdmin.ToString());
+            await _userManager.AddToRoleAsync(await _userManager.FindByEmailAsync(userCreate.Email), Roles.Member.ToString());
             return RedirectToAction(nameof(Index));
         }
 

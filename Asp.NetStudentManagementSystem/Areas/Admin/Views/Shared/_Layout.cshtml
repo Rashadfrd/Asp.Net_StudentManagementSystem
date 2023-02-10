@@ -20,7 +20,7 @@
                     <h5 class="header-navbar-title">Azərbaycan Dövlət <br> İqtisad Universiteti</h5>
                 </div>
                 <div class="header-nav-breadcrumb">
-                    <span class="exit"><i class="fa-solid fa-door-open me-2"></i> <a class="exit" asp-controller="Account" asp-action="SignOut">Çıxış</a></span>
+                    <span class="exit"><a class="exit text-decoration-none" asp-controller="Account" asp-action="SignOut"><i class="fa-solid fa-door-open me-2"></i> Çıxış</a></span>
                     <input type="checkbox" id="switch" />
                     <label class="switch-label ms-4" for="switch">Toggle</label>
                 </div>
@@ -39,6 +39,8 @@
                     <li class="sidebar-menu__item"><a asp-controller="Student" asp-action="Index"><i class="fa-solid fa-user me-2"></i><span class="sidebar-menu-title">Tələbələr</span></a></li>
                     <li class="sidebar-menu__item"><a asp-controller="Document" asp-action="Index"><i class="fa-regular fa-folder-open me-2"></i><span class="sidebar-menu-title">Ərizələr</span></a></li>
                     <li class="sidebar-menu__item"><a asp-controller="Subject" asp-action="Index"><i class="fa-solid fa-table-list me-2"></i><span class="sidebar-menu-title">Dərslər</span></a></li>
+                    <li class="sidebar-menu__item"><a asp-controller="Appeal" asp-action="Index"><i class="fa-solid fa-table-list me-2"></i><span class="sidebar-menu-title">Appelyasiya müraciətləri</span></a></li>
+                    <li class="sidebar-menu__item"><a asp-area="none" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-door-open me-2"></i></i><span class="sidebar-menu-title">Admin Paneldən Çıxış</span></a></li>
                 </ul>
             </div>
         </aside>

@@ -23,7 +23,7 @@
         <span class="text-danger" asp-validation-for="DateOfBirth"></span>
 
         <div class="form-input-control">
-            <select asp-for="SubjectId" class="gender-selection w-100">
+            <select asp-for="SubjectId" class="gender-selection w-100 form-control">
                  <option value="">-- Dərsi seçin --</option>
                 @foreach (var item in (ViewBag.Subjects as List<Subject>))
                 {

@@ -8,5 +8,6 @@ namespace Asp.NetStudentManagementSystem.Models
         public string Surname { get; set; }
         public bool IsAdmin { get; set; }
         public ICollection<UserDocument> UserDocuments { get; set; }
+        public ICollection<StudentAppeal> StudentAppeals { get; set; }
     }
 }

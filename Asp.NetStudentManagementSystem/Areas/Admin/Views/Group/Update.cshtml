@@ -15,7 +15,7 @@
         <span class="text-danger" asp-validation-for="Name"></span>
 
         <div class="form-input-control mt-2 mb-3">
-            <select asp-for="DepartmentId" class="gender-selection w-100">
+            <select asp-for="DepartmentId" class="gender-selection w-100 form-control">
                  <option value="">-- Aid olduğu şöbəni seçin --</option>
                 @foreach (var item in (ViewBag.Departments as List<Department>))
                 {

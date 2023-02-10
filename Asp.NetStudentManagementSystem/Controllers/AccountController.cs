@@ -94,7 +94,7 @@ namespace Asp.NetStudentManagementSystem.Controllers
                 Name = user.Name,
                 Surname = user.Surname,
                 Email = user.Email,
-                UserName = user.Email.Substring(0,user.Email.IndexOf("@"))
+                UserName = user.Email
             };
             var result = await _userManager.CreateAsync(userCreate, user.Password);
 
@@ -172,8 +172,8 @@ namespace Asp.NetStudentManagementSystem.Controllers
 
         private async void SendEmailConfirmationEmail(AppUser user, string subject, string token)
         {
-            string myEmail = "ferhadzaderesad@gmail.com";
-            string password = "wgzykxvjedjemise";
+            string myEmail = "";
+            string password = "";
 
             var from = new MailAddress(myEmail, "Student Support");
             var to = new MailAddress(user.Email);
@@ -203,6 +203,7 @@ namespace Asp.NetStudentManagementSystem.Controllers
                 if (check.Succeeded)
                 {
                     ViewBag.IsVerified = true;
+                    await _userManager.AddToRoleAsync(await _userManager.FindByIdAsync(uid), Roles.Member.ToString());
                 }
             }
             return View();

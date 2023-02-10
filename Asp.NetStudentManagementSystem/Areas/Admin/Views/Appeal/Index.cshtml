@@ -1,0 +1,56 @@
+﻿@using Asp.NetStudentManagementSystem.Models
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<StudentAppeal>
+<table class="subjects-table table table-striped table-bordered">
+</table>
+
+<table style="table-layout:auto" class="students-table table table-responsive table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Tarix</th>
+            <th>Fənn</th>
+            <th>Müraciətçi</th>
+            <th>Məzmun</th>
+            <th>Status(Yoxlanılıb)</th>
+            <th>Status(Qəbul edilirlik)</th>
+            <th>Düzəliş et</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.Subject.Name</td>
+                <td>@item.AppUser.Name</td>
+                <td>@item.Content</td>
+                @if (item.IsActive)
+                {
+                    <td class="text-success" style="font-weight:bold">Aktiv</td>
+                }
+                else
+                {
+                    <td class="text-success" style="font-weight:bold">Deaktiv</td>
+                }
+                @if (item.IsAllowed)
+                {
+                    <td class="text-success" style="font-weight:bold">Əsaslı</td>
+                }
+                else
+                {
+                    <td class="text-danger" style="font-weight:bold">Əsassız</td>
+                }
+                <td> <a class="admin-buttons" asp-controller="Appeal" asp-action="Update" asp-route-id="@item.Id">Düzəliş et</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

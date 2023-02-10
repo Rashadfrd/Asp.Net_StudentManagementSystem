@@ -27,7 +27,7 @@
         <span class="text-danger" asp-validation-for="DateOfBirth"></span>
 
         <div class="form-input-control w-100 mt-2 mb-3">
-            <select asp-for="Country" class="country-selection w-100">
+            <select asp-for="Country" class="country-selection w-100 form-control">
                 <option value="">-- Vətəndaşı olduğunuzu ölkəni seçin --</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Albania">Albania</option>
@@ -226,14 +226,14 @@
         </div>
 
         <div class="form-input-control mb-3">
-            <select asp-for="Gender" class="gender-selection w-100">
+            <select asp-for="Gender" class="gender-selection w-100 form-control">
                 <option value="">-- Cinsi seçin --</option>
                 <option value="male">Kişi</option>
                 <option value="female">Qadın</option>
             </select>
         </div>
         <div class="form-input-control">
-            <select asp-for="GroupId" class="gender-selection w-100">
+            <select asp-for="GroupId" class="gender-selection w-100 form-control">
                  <option value="">-- Təhsil alacağı qrupu seçin --</option>
                 @foreach (var item in (ViewBag.Groups as List<Group>))
                 {

@@ -21,12 +21,12 @@
             <div class="container-fluid text-light">
                 <div class="header-navbar-logo d-flex justify-content-center align-items-center">
                     <div class="header-navbar-logo__img me-3">
-                        <img src="https://unec.edu.az/application/uploads/2016/02/UNEC-logo-ENG-.png" width="65" alt="">
+                        <a asp-controller="Home" asp-action="Index"><img src="https://unec.edu.az/application/uploads/2016/02/UNEC-logo-ENG-.png" width="65" alt=""></a>
                     </div>
                     <h5 class="header-navbar-title">Azərbaycan Dövlət <br> İqtisad Universiteti</h5>
                 </div>
                 <div class="header-nav-breadcrumb">
-                    <span class="exit"><a class="exit text-decoration-nones" asp-controller="Account" asp-action="SignOut"><i class="fa-solid fa-door-open me-2"></i> Çıxış</a></span>
+                    <span class="exit"><a class="exit text-decoration-none" asp-controller="Account" asp-action="SignOut"><i class="fa-solid fa-door-open me-2"></i> Çıxış</a></span>
                     <input type="checkbox" id="switch" />
                     <label class="switch-label ms-4" for="switch">Toggle</label>
                 </div>
@@ -49,7 +49,6 @@
                         <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="Index"><i class="fa-regular fa-bell me-2"></i><span class="sidebar-menu-title">Bildirişlər</span></a></li>
                         <li class="sidebar-menu__item"><a asp-controller="TeacherJournal" asp-action="Journal"><i class="fa-regular fa-file-lines me-2"></i><span class="sidebar-menu-title">Jurnal</span></a></li>
                         <li class="sidebar-menu__item"><a asp-controller="TeacherJournal" asp-action="UpdateJournal"><i class="fa-regular fa-file-lines me-2"></i><span class="sidebar-menu-title">Jurnala Düzəliş</span></a></li>
-                        <li class="sidebar-menu__item"><a asp-controller="Redoc" asp-action="Index"><i class="fa-regular fa-file-lines me-2"></i><span class="sidebar-menu-title">Bir pəncərə xidməti</span></a></li>
                         <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="PrivateChat"><i class="fa-regular fa-comments me-2"></i><span class="sidebar-menu-title">Canlı dəstək</span></a></li>
                     }
                     @if (User.IsInRole("Member"))
@@ -60,6 +59,7 @@
                         <li class="sidebar-menu__item"><a asp-controller="StudentJournal" asp-action="Index"><i class="fa-solid fa-table-list me-2"></i><span class="sidebar-menu-title">Elektron jurnal</span></a></li>
                         <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="Files"><i class="fa-regular fa-folder-open me-2"></i><span class="sidebar-menu-title">Tədris materialları</span></a></li>
                         <li class="sidebar-menu__item"><a asp-controller="Redoc" asp-action="Index"><i class="fa-regular fa-file-lines me-2"></i><span class="sidebar-menu-title">Bir pəncərə xidməti</span></a></li>
+                        <li class="sidebar-menu__item"><a asp-controller="StudentJournal" asp-action="Appeal"><i class="fa-regular fa-file-lines me-2"></i><span class="sidebar-menu-title">Appelyasiya</span></a></li>
                         <li class="sidebar-menu__item"><a asp-controller="Home" asp-action="PrivateChat"><i class="fa-regular fa-comments me-2"></i><span class="sidebar-menu-title">Canlı dəstək</span></a></li>
                     }
                 </ul>
@@ -94,7 +94,18 @@
                         <span>@teacherInfo.Subject.Name</span>
                     </div>
                     <div class="info-change-btn">
-                        <a asp-controller="Home" asp-action="ChangePassword">Profili dəyiş</a>
+                        <a class="psw-change" asp-controller="Home" asp-action="ChangePassword">Profili dəyiş</a>
+                    </div>
+                </div>
+            }
+            @if (User.IsInRole("SuperAdmin"))
+            {
+                <div class="profile-card__picture mb-2">
+                    <img src="https://media.istockphoto.com/id/522855255/vector/male-profile-flat-blue-simple-icon-with-long-shadow.jpg?s=612x612&w=0&k=20&c=EQa9pV1fZEGfGCW_aEK5X_Gyob8YuRcOYCYZeuBzztM=" width="135" height="135" alt="">
+                </div>
+                <div class="profile-card__student-info">
+                    <div class="name-surname  mb-2">
+                        <span class="profile-card-item">Admin</span><br>
                     </div>
                 </div>
             }
@@ -146,7 +157,7 @@
                         }
                     </div>
                     <div class="info-change-btn">
-                        <a asp-controller="Home" asp-action="ChangePassword">Profili dəyiş</a>
+                        <a class="psw-change" asp-controller="Home" asp-action="ChangePassword">Profili dəyiş</a>
                     </div>
                 </div>
             }

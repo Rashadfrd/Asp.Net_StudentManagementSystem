@@ -26,6 +26,7 @@ namespace Asp.NetStudentManagementSystem.DAL
         public DbSet<Message> Messages { get; set; }
         public DbSet<UserMessages> UserMessages { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<StudentAppeal> StudentAppeals { get; set; }
 
     }
 }

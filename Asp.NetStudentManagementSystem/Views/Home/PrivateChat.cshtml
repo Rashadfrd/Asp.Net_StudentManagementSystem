@@ -18,12 +18,12 @@
             <div class="container-fluid text-light">
                 <div class="header-navbar-logo d-flex justify-content-center align-items-center">
                     <div class="header-navbar-logo__img me-3">
-                        <img src="https://unec.edu.az/application/uploads/2016/02/UNEC-logo-ENG-.png" width="65" alt="">
+                       <a asp-controller="Home" asp-action="Index"><img src="https://unec.edu.az/application/uploads/2016/02/UNEC-logo-ENG-.png" width="65" alt=""></a>
                     </div>
                     <h5 class="header-navbar-title">Azərbaycan Dövlət <br> İqtisad Universiteti</h5>
                 </div>
                 <div class="header-nav-breadcrumb">
-                    <span class="exit"><i class="fa-solid fa-door-open me-2"></i> <a class="exit" asp-controller="Account" asp-action="SignOut">Çıxış</a></span>
+                    <span class="exit"><a class="exit text-decoration-none" asp-controller="Account" asp-action="SignOut"><i class="fa-solid fa-door-open me-2"></i> Çıxış</a></span>
                     <input type="checkbox" id="switch" />
                     <label class="switch-label ms-4" for="switch">Toggle</label>
                 </div>
@@ -116,7 +116,7 @@
                 foreach (var msg in Model.AdminMessages.Where(x=>x.SenderId == item.Id ).OrderByDescending(x=>x.SentDate))
                 {
                     <a style="text-decoration:none;color:black" asp-route-email="@Model.AllUsers.FirstOrDefault(x=>x.Id == msg.SenderId).Email">
-                    <li style="padding:5px 15px;height:65px;border:1px solid #ccc; margin-bottom:5px;border-radius:8px;background-color:#f5f5fd">
+                    <li style="padding:5px 15px;height:65px;border:1px solid #ccc; margin-bottom:5px;border-radius:4px;background-color:#f5f5fd;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
                         <div>@item.Name</div>
                         <div id="@Model.AllUsers.FirstOrDefault(x=>x.Id == msg.SenderId).Email" style="height:20px;overflow:hidden">@msg.Messages.Content<div/>
                     </li>
@@ -246,7 +246,7 @@ connection.on("ReceiveMessage", function (user, sendername, message) {
                 newInbox.style.border = "1px solid #ccc"
                 newInbox.style.backgroundColor = "#f5f5fd"
                 newInbox.style.marginBottom = "5px"
-                newInbox.style.borderRadius = "8px"
+                newInbox.style.borderRadius = "4px"
                 var msgwrapper = document.createElement("div")
                 msgwrapper.textContent = encodedMsg
                 msgwrapper.setAttribute('id', user)

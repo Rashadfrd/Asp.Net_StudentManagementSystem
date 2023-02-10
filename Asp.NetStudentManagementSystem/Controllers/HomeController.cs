@@ -84,6 +84,10 @@ namespace Asp.NetStudentManagementSystem.Controllers
             return View(vm);
         }
 
+        public async Task<IActionResult> AllChat()
+        {
+            return View();
+        }
         public IActionResult ChangePassword()
         {
             return View();

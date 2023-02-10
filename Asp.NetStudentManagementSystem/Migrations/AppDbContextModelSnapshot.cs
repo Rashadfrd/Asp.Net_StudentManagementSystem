@@ -283,6 +283,43 @@ namespace Asp.NetStudentManagementSystem.Migrations
                     b.ToTable("Schedules");
                 });
 
+            modelBuilder.Entity("Asp.NetStudentManagementSystem.Models.StudentAppeal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsAllowed")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("SubjectId");
+
+                    b.ToTable("StudentAppeals");
+                });
+
             modelBuilder.Entity("Asp.NetStudentManagementSystem.Models.Subject", b =>
                 {
                     b.Property<int>("Id")
@@ -778,6 +815,25 @@ namespace Asp.NetStudentManagementSystem.Migrations
                     b.Navigation("Subject");
                 });
 
+            modelBuilder.Entity("Asp.NetStudentManagementSystem.Models.StudentAppeal", b =>
+                {
+                    b.HasOne("Asp.NetStudentManagementSystem.Models.AppUser", "AppUser")
+                        .WithMany("StudentAppeals")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Asp.NetStudentManagementSystem.Models.Subject", "Subject")
+                        .WithMany()
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Subject");
+                });
+
             modelBuilder.Entity("Asp.NetStudentManagementSystem.Models.Teacher", b =>
                 {
                     b.HasOne("Asp.NetStudentManagementSystem.Models.Subject", "Subject")
@@ -933,6 +989,8 @@ namespace Asp.NetStudentManagementSystem.Migrations
 
             modelBuilder.Entity("Asp.NetStudentManagementSystem.Models.AppUser", b =>
                 {
+                    b.Navigation("StudentAppeals");
+
                     b.Navigation("UserDocuments");
                 });
 #pragma warning restore 612, 618
