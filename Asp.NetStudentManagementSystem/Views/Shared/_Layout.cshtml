@@ -143,7 +143,14 @@
                     </div>
                     <div class="admittion-year mb-2">
                         <span class="profile-card-item">Qəbul ili</span> <br>
-                        <span>2020</span>
+                        @if (@userInfo.EntranceYear is null)
+                        {
+                            <span>Təyin edilməyib</span>
+                        }
+                        else
+                        {
+                            <span>@userInfo.EntranceYear</span>
+                        }
                     </div>
                     <div class="status mb-3">
                         <span class="profile-card-item">Təhsil statusu</span><br>

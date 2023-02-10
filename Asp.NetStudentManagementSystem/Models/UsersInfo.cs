@@ -14,6 +14,7 @@ namespace Asp.NetStudentManagementSystem.Models
 
         public string Country { get; set; }
         public string Gender { get; set; }
+        public int? EntranceYear { get; set; }
 
         [Required]
         public DateTime DateOfBirth { get; set; }

@@ -25,6 +25,10 @@
         <input class="form-control" asp-for="DateOfBirth" type="date" max="2011-01-01" />
         <span class="text-danger" asp-validation-for="DateOfBirth"></span>
 
+        <label asp-for="EntranceYear">Qəbul olduğu il</label>
+        <input class="form-control" asp-for="EntranceYear" />
+        <span class="text-danger" asp-validation-for="EntranceYear"></span>
+
         <div class="form-input-control w-100 mt-2 mb-3">
             <select asp-for="Country" class="country-selection w-100 form-control">
                 <option value="">-- Vətəndaşı olduğunuzu ölkəni seçin --</option>

@@ -292,11 +292,9 @@ namespace Asp.NetStudentManagementSystem.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("AppUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Date")
@@ -457,6 +455,9 @@ namespace Asp.NetStudentManagementSystem.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EntranceYear")
+                        .HasColumnType("int");
 
                     b.Property<string>("FatherName")
                         .IsRequired()
@@ -819,9 +820,7 @@ namespace Asp.NetStudentManagementSystem.Migrations
                 {
                     b.HasOne("Asp.NetStudentManagementSystem.Models.AppUser", "AppUser")
                         .WithMany("StudentAppeals")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AppUserId");
 
                     b.HasOne("Asp.NetStudentManagementSystem.Models.Subject", "Subject")
                         .WithMany()

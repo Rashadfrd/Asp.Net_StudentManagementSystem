@@ -54,7 +54,8 @@ namespace Asp.NetStudentManagementSystem.Areas.Admin.Controllers
                 Country = student.Country,
                 FatherName = student.FatherName,
                 DateOfBirth = student.DateOfBirth,
-                GroupId = student.GroupId
+                GroupId = student.GroupId,
+                EntranceYear = student.EntranceYear
             };
             await _context.UserInfos.AddAsync(userInfo);
             await _context.SaveChangesAsync();
@@ -97,6 +98,7 @@ namespace Asp.NetStudentManagementSystem.Areas.Admin.Controllers
             if (!ModelState.IsValid) return View(user);
             var editStudent = _context.UserInfos.Find(id);
             if (editStudent is null) return NotFound();
+            editStudent.EntranceYear = user.EntranceYear;
             editStudent.Name = user.Name;
             editStudent.Surname = user.Surname;
             editStudent.FatherName = user.FatherName;

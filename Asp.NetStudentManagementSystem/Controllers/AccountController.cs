@@ -172,8 +172,8 @@ namespace Asp.NetStudentManagementSystem.Controllers
 
         private async void SendEmailConfirmationEmail(AppUser user, string subject, string token)
         {
-            string myEmail = "";
-            string password = "";
+            string myEmail = "rashadtest6178@gmail.com";
+            string password = "hxobkbucnejjmgwa";
 
             var from = new MailAddress(myEmail, "Student Support");
             var to = new MailAddress(user.Email);
